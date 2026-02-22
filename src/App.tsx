@@ -4,9 +4,11 @@ import HomePage from "./pages/HomePage";
 import GamePage from "./pages/GamePage";
 import LeaderBoardPage from "./pages/LeaderBoardPage";
 import AboutPage from "./pages/AboutPage";
+import { GameProvider } from "./context/GameContext";
 
 export default function App() {
   return (
+    <GameProvider>
     <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
@@ -17,5 +19,6 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </GameProvider>
   )
 }

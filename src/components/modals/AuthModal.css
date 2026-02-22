@@ -1,0 +1,120 @@
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.auth-modal {
+  background-color: var(--color-white);
+  padding: var(--space-l);
+  border-radius: var(--space-xxs);
+  min-width: 20rem;
+  max-width: 25rem;
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+
+.auth-modal-tabs {
+  display: flex;
+  margin-bottom: var(--space-m);
+}
+
+.auth-modal-tabs button {
+  flex: 1;
+  padding: var(--space-s) var(--space-m);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--color-black);
+  border-bottom: 0.125rem solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.auth-modal-tabs button.active {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* form */
+.auth-modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-modal-form label {
+  margin-bottom: var(--space-s);
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.auth-modal-form input {
+  width: 100%;
+  padding: var(--space-s);
+  margin-top: var(--space-xxs);
+  border: 0.0625rem solid #ccc;
+  border-radius: var(--space-xxs);
+}
+
+.auth-modal-form button {
+  margin-top: var(--space-m);
+  padding: var(--space-s);
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  font-weight: bold;
+  border: none;
+  border-radius: var(--space-xxs);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.auth-modal-form button:hover {
+  opacity: 0.9;
+}
+
+/* Add to existing AuthModal.css */
+.auth-modal-error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: var(--space-s);
+  border-radius: var(--space-xxs);
+  margin-bottom: var(--space-m);
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid #ffcdd2;
+}
+
+.auth-modal-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.auth-modal-form button:disabled:hover {
+  opacity: 0.5;
+}
+
+.auth-modal-form input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+/* Add to AuthModal.css */
+.auth-modal-hint {
+  color: var(--color-secondary);
+  font-size: 0.85rem;
+  margin-top: var(--space-xxs);
+  margin-bottom: var(--space-xs);
+  display: block;
+  font-style: italic;
+}
+
+.auth-modal-form input::placeholder {
+  color: #999;
+  font-size: 0.9rem;
+}

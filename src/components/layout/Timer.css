@@ -1,0 +1,10 @@
+.timer {
+    background-color: var(--color-white);
+    padding: var(--space-xxs);
+    border: var(--space-xxs) dashed var(--color-black);
+    border-radius: var(--space-xs)
+}
+
+.timer > h1 {
+    font-weight: 100;
+}

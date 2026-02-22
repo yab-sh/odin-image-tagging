@@ -1,0 +1,95 @@
+.game-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+/* Target Bar Styles */
+.target-bar {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-s);
+  padding: var(--space-m);
+  background-color: var(--color-white);
+  border-bottom: 2px solid var(--color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.target-item {
+  padding: var(--space-s) var(--space-m);
+  border-radius: var(--space-xxs);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border: 2px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.target-item:hover:not(.found) {
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 180, 0, 0.3);
+}
+
+.target-item.selected {
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  border: 2px solid var(--color-black);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 180, 0, 0.4);
+}
+
+.target-item.found {
+  opacity: 0.5;
+  text-decoration: line-through;
+  cursor: not-allowed;
+  background-color: var(--color-secondary);
+  filter: grayscale(0.5);
+}
+
+.target-item.found:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Image Wrapper Styles */
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  align-self: center;
+}
+
+.game-image {
+  max-width: 100%;
+  display: block;
+  cursor: crosshair;
+  -webkit-user-drag: none;
+}
+
+.target-cursor {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 20px solid var(--color-black);
+  background-color: rgb(255, 255, 255);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  box-shadow: 0 0 10px rgb(44, 31, 0);
+  z-index: 10;
+}
+
+.target-cursor::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,194 @@
+.notif-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.notif-modal {
+  background-color: var(--color-white);
+  padding: var(--space-xl);
+  border-radius: var(--space-s);
+  min-width: 20rem;
+  max-width: 30rem;
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Confetti Container */
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  top: -20%;
+  animation: confetti-fall 3s ease-in infinite;
+  opacity: 0.8;
+  transform: rotate(0deg);
+  border-radius: var(--space-xxxs);
+}
+
+@keyframes confetti-fall {
+  0% {
+    top: -20%;
+    transform: rotate(0deg) translateX(0);
+    opacity: 0.8;
+  }
+  25% {
+    transform: rotate(90deg) translateX(20px);
+  }
+  50% {
+    transform: rotate(180deg) translateX(-20px);
+  }
+  75% {
+    transform: rotate(270deg) translateX(20px);
+  }
+  100% {
+    top: 120%;
+    transform: rotate(360deg) translateX(0);
+    opacity: 0.2;
+  }
+}
+
+/* Modal Content */
+.notif-modal-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.notif-modal-title {
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  margin-bottom: var(--space-m);
+  animation: title-pop 0.5s ease-out;
+}
+
+@keyframes title-pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.notif-modal-message {
+  margin-bottom: var(--space-l);
+}
+
+.notif-modal-message p {
+  font-size: 1.2rem;
+  color: var(--color-black);
+  margin-bottom: var(--space-s);
+}
+
+.completion-time {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: var(--space-s) var(--space-m);
+  border-radius: var(--space-xxs);
+  display: inline-block;
+  margin: var(--space-s) 0;
+}
+
+.time-label {
+  font-weight: normal;
+  margin-right: var(--space-xs);
+}
+
+.time-value {
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+
+.new-record-badge {
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  padding: var(--space-xs) var(--space-s);
+  border-radius: var(--space-xxs);
+  font-weight: bold;
+  margin-top: var(--space-s);
+  animation: badge-pulse 1s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+    background-color: #ffd700;
+  }
+}
+
+.notif-modal-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: var(--space-m);
+}
+
+.redirect-message {
+  color: var(--color-secondary);
+  margin-bottom: var(--space-s);
+}
+
+.redirect-button {
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  border: none;
+  padding: var(--space-s) var(--space-l);
+  border-radius: var(--space-xxs);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 200px;
+}
+
+.redirect-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.redirect-button:active {
+  transform: translateY(0);
+}
+
+/* Optional close button in top right */
+.notif-modal-close {
+  position: absolute;
+  top: var(--space-s);
+  right: var(--space-s);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-secondary);
+  z-index: 2;
+  transition: color 0.2s;
+}
+
+.notif-modal-close:hover {
+  color: var(--color-primary);
+}

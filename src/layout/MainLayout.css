@@ -1,0 +1,31 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-secondary);
+  color: var(--color-black);
+  font-family: var(--font-family);
+}
+
+.layout main {
+  flex: 1;
+  padding: var(--space-l);
+  background-color: var(--color-white);
+  border-top-left-radius: var(--space-xxs);
+  border-top-right-radius: var(--space-xxs);
+  box-shadow: 0 -0.125rem 0.25rem rgba(0,0,0,0.1);
+  margin-top: var(--space-s);
+}
+
+.layout main::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.layout main::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: var(--space-xxs);
+}
+
+.layout main::-webkit-scrollbar-track {
+  background: var(--color-white);
+}
