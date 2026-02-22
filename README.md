@@ -1,73 +1,64 @@
-# React + TypeScript + Vite
+# Find'em! — Photo Tagging Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Where's Waldo-style game where players find hidden characters against the clock. Built as part of The Odin Project curriculum.
 
-Currently, two official plugins are available:
+[Live Demo](#) | [Backend Repository](https://github.com/yab-sh/odin-image-tagging-backend)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Find'em! is a full-stack photo tagging game. Players are shown three characters to find in a detailed image. The timer starts when the image loads and stops when all characters are found. Times are saved to a leaderboard.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Built With
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React + TypeScript
+- Vite
+- React Router
+- Axios
+- CSS custom properties
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Backend: Node.js, Express, PostgreSQL, Prisma (see [backend repo](https://github.com/yab-sh/odin-image-tagging-backend))
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Features
+
+- User authentication (register/login with a secret)
+- Persistent login state
+- Timer that tracks completion time
+- Click-based character detection
+- Leaderboard showing top 10 fastest times
+- Responsive design
+
+---
+
+## Getting Started
+
+1. Clone the repository
+```bash
+git clone https://github.com/yab-sh/odin-image-tagging.git
+cd odin-image-tagging
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. install dependencies
+```bash
+npm install
 ```
+3. create a [.env] file
+```env
+API_URL=http://localhost:3000/api/v1
+```
+4. Start the development server
+```bash
+npm run dev
+```
+The backend must be running seperately. See the [Backend Repository](https://github.com/yab-sh/odin-image-tagging-backend) for setup instructions.
+
+## Author
+yasin-sh - 
+[GitHub](https://github.com/yab-sh) | [LinkedIn](https://www.linkedin.com/in/yasin-sh/)
+
+##License
+This project is open source and available under the [MIT License](License.md).
