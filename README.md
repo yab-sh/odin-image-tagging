@@ -60,5 +60,5 @@ The backend must be running seperately. See the [Backend Repository](https://git
 yasin-sh - 
 [GitHub](https://github.com/yab-sh) | [LinkedIn](https://www.linkedin.com/in/yasin-sh/)
 
-##License
+## License
 This project is open source and available under the [MIT License](License.md).
